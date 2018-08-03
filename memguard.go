@@ -873,3 +873,18 @@ This function is precautonary as core-dumps are usually disabled by default on m
 func DisableUnixCoreDumps() {
 	memcall.DisableCoreDumps()
 }
+
+// Read implements io.Reader interface: func (T) Read(b []byte) (n int, err error)
+func (b *container) Read(buf []byte) (n int, err error) {
+	// Attain the mutex lock.
+	b.Lock()
+	defer b.Unlock()
+
+	// Check to see if it's destroyed.
+	if len(b.buffer) == 0 {
+		return 0, ErrInvalidLength
+	}
+
+	subtle.ConstantTimeCopy(1, buf, b.buffer)
+	return len(b.buffer), nil
+}

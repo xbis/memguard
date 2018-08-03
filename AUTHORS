@@ -17,3 +17,6 @@ dotcppfile <dotcppfile@gmail.com>
 
 Joseph Richey <joerichey@google.com>
     - Suggested using system calls for memory allocation.
+
+Kostiantyn Chertov <kostiantyn.chertov@gmail.com>
+    - Implemented io.Reader interface

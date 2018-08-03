@@ -34,7 +34,7 @@ Full documentation and a complete overview of the API can be found [here](https:
 Although we do recommend using a release, the simplest way to install the library is to `go get` it:
 
 ```
-$ go get github.com/awnumar/memguard
+$ go get github.com/xbis/memguard
 ```
 
 If you would prefer a signed release that you can verify and manually compile yourself, download and extract the [latest release](https://github.com/awnumar/memguard/releases/latest). Then go ahead and run:
