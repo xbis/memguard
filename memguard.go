@@ -875,7 +875,7 @@ func DisableUnixCoreDumps() {
 }
 
 // Read implements io.Reader interface: func (T) Read(b []byte) (n int, err error)
-func (b *container) Read(buf []byte) (n int, err error) {
+func (b *LockedBuffer) Read(buf []byte) (n int, err error) {
 	// Attain the mutex lock.
 	b.Lock()
 	defer b.Unlock()
